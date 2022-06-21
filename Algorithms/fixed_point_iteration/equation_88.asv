@@ -1,0 +1,13 @@
+error_tolerance = 1;
+p_0  = 0;
+c = 1;
+phi = 0.5;
+
+p_i = p_0;
+p_f = g(p_i, c, phi);
+error = p_f - p_i;
+while (error^2 > error_tolerance^2) or (iterations > MAX_ITERATIONS)
+    p_i = p_f;
+    p_f = g(p_i, c, phi);
+    error = p_f - p_i;
+end
